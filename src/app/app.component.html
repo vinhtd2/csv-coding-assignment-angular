@@ -1,0 +1,36 @@
+<h2>Tasks</h2>
+
+<div class="container">
+  <input [(ngModel)]="description" placeholder="Input description" />
+  <button (click)="onNewTask(description)">Add New Task</button>
+  <br />
+  <div>
+    <label for="id">Filter by Task ID</label>
+    <input id="id" [(ngModel)]="id" placeholder="Task ID" />
+    <button (click)="onFindTaskById(id)">Filter</button>
+  </div>
+  <div class="two-screen">
+    <div class="list-screen">
+      <h1>THE LIST SCREEN</h1>
+      <ul>
+        <li *ngFor="let t of tasks|async">
+          Task: {{t.id}}, {{t.description}}
+          <button (click)="onSelect(t)">See Detail</button>
+          <button (click)="onComplete(t.id)">Complete</button>
+          <!-- <button (click)="assign()">Assign</button>
+            <button (click)="complete()">Complete</button>
+            <button (click)="update()">Update</button> -->
+        </li>
+
+      </ul>
+    </div>
+    <app-task-detail [task]="selectedTask"></app-task-detail>
+  </div>
+</div>
+
+
+<!-- <ul>
+  <li *ngFor="let t of tasks|async">
+    Task: {{t.id}}, {{t.description}}
+  </li>
+</ul> -->

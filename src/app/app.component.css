@@ -1,0 +1,10 @@
+.container {
+}
+
+.two-screen {
+    display: flex;
+}
+
+.list-screen {
+    margin: 0 100px 0 0;
+}

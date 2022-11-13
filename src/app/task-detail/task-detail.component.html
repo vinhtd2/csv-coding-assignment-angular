@@ -1,0 +1,9 @@
+<div class="details-screen" *ngIf="task">
+    <h1>THE DETAILS</h1>
+    <h2>Task {{task.Id}}</h2>
+    <div>
+        <div>Description: {{task.description}}</div>
+        <div>Assigneee ID: {{task.assigneeId}}</div>
+        <div>Completed: {{task.completed}}</div>
+    </div>
+</div>
